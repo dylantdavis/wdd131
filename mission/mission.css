@@ -55,3 +55,8 @@ img {
     max-width: 100%;
     margin: 3rem auto 0;
 }
+
+body.dark {
+    background-color: #121212;
+    color: #eeeeee;
+}

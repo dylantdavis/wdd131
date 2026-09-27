@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="drop-down-menu.js" defer></script>"
+    <style>
+        nav > ul {
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+            gap: 1em;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            list-style: none;
+            padding-left: 0;
+            background-color: #f0f0f0;
+            margin-top: 0.5em;
+        }
+
+        .show {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Menu Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Link 1</a>
+                    <ul class="submenu">
+                        <li><a href="#"><Sub</a></li>
+                        <li><a href="#"><Sub</a></li>
+                        <li><a href="#"><Sub</a></li>
+                        <li><a href="#"><Sub</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <input type="text" id="search" placeholder="Search...">
+</body>
+</html>
