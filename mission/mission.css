@@ -59,4 +59,10 @@ img {
 body.dark {
     background-color: #121212;
     color: #eeeeee;
+    border-color: #333;
+}
+
+body.dark u {
+    color: #6fb1f0;
+    border-bottom-color: #333;
 }

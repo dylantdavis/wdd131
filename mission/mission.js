@@ -6,11 +6,11 @@ selectElem.addEventListener('change', changeTheme);
 function changeTheme() {
     let current = selectElem.value;
     if (current == 'dark') {
-        document.body.classList.add('dark');
+        document.body.className = 'dark';
         logo.src = 'images/byui-logo-white.png';
     } 
     else {
-        document.body.classList.add('light');
+        document.body.className = 'light';
         logo.src = 'images/download.png';
     }
 }
