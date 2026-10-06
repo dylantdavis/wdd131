@@ -6,3 +6,13 @@ function toggleMenu() {
 }
 
 document.querySelector(".menu-btn").addEventListener("click", toggleMenu);
+// function toggleMenu() {
+//     navEl.classList.toggle("hide")
+// }
+// addIndex();
+// displayWelcome();
+
+// const menuBtn = document.querySelector(".menu-btn");
+// const navEl = document.querySelector(".main-nav")
+
+// menuBtn.addEventListener("click", toggleMenu);
