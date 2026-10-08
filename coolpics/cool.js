@@ -7,3 +7,9 @@ btn.addEventListener('click', () => {
   btn.classList.toggle('active', isOpen);
   btn.setAttribute('aria-expanded', isOpen);
 });
+
+btn.addEventListener('escape', () => {
+  nav.classList.remove('open');
+  btn.classList.remove('active');
+  btn.setAttribute('aria-expanded', 'false');
+});
