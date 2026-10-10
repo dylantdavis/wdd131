@@ -1,6 +1,6 @@
 body{
-    background-color: #c4c4c4
-    img-
+    background-color: #c4c4c4;
+    
 }
 header{
     background-color: #2A81E2;
@@ -68,6 +68,47 @@ nav.open{
     width: 300px;
     height: 300px;
     object-fit: cover;
+
+}
+
+.gallery img {
+    cursor: zoom-in;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #2A81E2;
 }
 
 @media (max-width: 600px){
