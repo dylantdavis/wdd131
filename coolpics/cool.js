@@ -1,4 +1,4 @@
-// ----- Hamburger menu (merge with your existing code if you have it) -----
+// ----- Hamburger menu -----
 const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('nav');
 
