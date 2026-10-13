@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&family=Shrikhand&display=swap");
+
+/* ---------- Palette: 70s diner ---------- */
+:root {
+    --teal: #1b4d4a;
+    --mustard: #f0a91e;
+    --orange: #e4572e;
+    --olive: #9bb23c;
+    --brick: #b3392a;
+    --cream: #f6e7c8;
+    --ink: #2a1a12;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 3rem 1.25rem 4rem;
+    background-color: var(--teal);
+    /* halftone print dots */
+    background-image: radial-gradient(rgba(0, 0, 0, 0.18) 1.2px, transparent 1.6px);
+    background-size: 9px 9px;
+    color: var(--cream);
+    font-family: "DM Sans", "Trebuchet MS", sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------- Heading ---------- */
+h1 {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 2.5rem;
+    font-family: "Shrikhand", "Georgia", serif;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    text-align: center;
+    color: var(--cream);
+    text-shadow: 4px 4px 0 var(--orange), 8px 8px 0 var(--ink);
+    animation: title-pop 0.9s cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
+}
+
+/* three retro stripes that sweep in under the title */
+h1::after {
+    content: "";
+    display: block;
+    height: 24px;
+    margin-top: 1rem;
+    background: linear-gradient(
+        to bottom,
+        var(--mustard) 0 33.33%,
+        var(--orange) 33.33% 66.66%,
+        var(--brick) 66.66% 100%
+    );
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 var(--ink);
+    transform-origin: left center;
+    animation: stripe-sweep 0.7s cubic-bezier(0.7, 0, 0.2, 1) 0.55s backwards;
+}
+
+/* ---------- Nav ---------- */
+.navbar {
+    max-width: 26rem;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+nav a {
+    --pill: var(--mustard);
+    display: block;
+    padding: 0.9rem 1.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--pill);
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.15s cubic-bezier(0.3, 1.6, 0.5, 1),
+                box-shadow 0.15s ease;
+    animation: pill-drop 0.8s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+}
+
+/* each pill gets its own colour and entrance delay */
+nav a:nth-child(1) { --pill: var(--mustard); animation-delay: 1.00s; }
+nav a:nth-child(2) { --pill: var(--orange);  animation-delay: 1.12s; }
+nav a:nth-child(3) { --pill: var(--cream);   animation-delay: 1.24s; }
+nav a:nth-child(4) { --pill: var(--olive);   animation-delay: 1.36s; }
+nav a:nth-child(5) { --pill: var(--mustard); animation-delay: 1.48s; }
+nav a:nth-child(6) { --pill: var(--orange);  animation-delay: 1.60s; }
+
+/* physical-button feel: lifts on hover, presses on click */
+nav a:hover {
+    transform: translate(-3px, -3px) rotate(-1deg);
+    box-shadow: 9px 9px 0 var(--ink);
+}
+
+nav a:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 var(--ink);
+    transition-duration: 0.05s;
+}
+
+nav a:focus-visible {
+    outline: 3px dashed var(--cream);
+    outline-offset: 4px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes title-pop {
+    0%   { opacity: 0; transform: scale(0.4) rotate(-8deg); }
+    100% { opacity: 1; transform: none; }
+}
+
+@keyframes stripe-sweep {
+    0%   { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+@keyframes pill-drop {
+    0%   { opacity: 0; transform: translateY(-140px) rotate(-8deg) scale(0.85); }
+    55%  { opacity: 1; transform: translateY(14px) rotate(2deg); }
+    75%  { transform: translateY(-6px) rotate(-1deg); }
+    100% { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    h1, h1::after, nav a { animation: none; }
+    nav a { transition: none; }
+}
