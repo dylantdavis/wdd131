@@ -3,6 +3,9 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
 header {
@@ -30,11 +33,12 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
     text-align: center;
 }
 
 nav ul li {
-    display: block;
     margin: 0;
     padding: 8px 0;
 }
@@ -42,6 +46,11 @@ nav ul li {
 nav ul li a {
     color: #df5252;
     text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 2px;
 }
 
 main {
@@ -77,32 +86,28 @@ footer {
 
 @media (min-width: 600px) {
     .main-nav {
-        display: flex;
-        justify-content: flex-end;
-        /* or center */
+        grid-auto-flow: column;
+        grid-template-columns: none;
+        justify-content: center;
         gap: 2em;
     }
 
     .post {
-        display: flex;
+        /* Grid: sidebar info + main content */
+        display: grid;
+        grid-template-columns: 20% 1fr;
     }
 
     .post-info {
-        width: 20%;
         padding-right: 1.5rem;
         border-right: 2px solid #e6c532;
     }
 
     .post-content {
-        flex: 1;
         padding-left: 1.5rem;
     }
 
     .book-cover {
         max-width: 300px;
-    }
-
-    nav ul i {
-        padding: 0;
     }
 }
