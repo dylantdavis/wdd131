@@ -2,16 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="main.css">
-    <style>
-       nav a {
-            display: block;
-            font-size: 1em;
-            margin-top: 2em;
-        }
-    </style>
+    <script src="main.js" defer></script>
+    <script src="dropdown.js" defer></script>
 </head>
 <body>
     <h1>Welcome to My Homepage</h1>
@@ -19,11 +14,20 @@
         <nav>
             <a href="alvey/">Alvey Practice</a>
             <a href="mission/" class="mission-link">Mission Statement Assignment</a>
-            <a href="sandbox/drop-down-menu.html" class ="dropdown-link">Drop Down Menu Assignment</a>
-            <a href="sandbox/responsive.html" class ="responsive-link">Responsive Assignment</a>
-            <a href="coolpics/index.html" class ="coolpics-link">Cool Pics</a>
-            <a href="sandbox/modal/modal.html" class ="modal-link">Modal Window</a>
-            <a href="sandbox/movies/movies.html" class =movies-link">Movies Assignment</a>
+            <a href="coolpics/index.html" class="coolpics-link">Cool Pics</a>
+            <a href="blog/index.html" class="blog-link">Blog Assignment</a>
+
+            <div class="dropdown">
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="sandbox-menu">
+                    Sandbox <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-menu" id="sandbox-menu">
+                    <a href="sandbox/drop-down/drop-down-menu.html" class="dropdown-link">Drop Down Menu Assignment</a>
+                    <a href="sandbox/responsive.html" class="responsive-link">Responsive Assignment</a>
+                    <a href="sandbox/modal/modal.html" class="modal-link">Modal Window</a>
+                    <a href="sandbox/movies/movies.html" class="movies-link">Movies Assignment</a>
+                </div>
+            </div>
         </nav>
     </div>
 </body>

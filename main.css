@@ -114,6 +114,120 @@ nav a:focus-visible {
     outline-offset: 4px;
 }
 
+/* ---------- Sandbox dropdown ---------- */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--cream);
+    background: var(--brick);
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 5px 5px 0 var(--ink);
+    cursor: pointer;
+    transition: transform 0.15s cubic-bezier(0.3, 1.6, 0.5, 1),
+                box-shadow 0.15s ease;
+    /* 5th item in the nav, so it drops in after the 4th pill */
+    animation: pill-drop 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1.48s backwards;
+}
+
+.dropdown-toggle:hover {
+    transform: translate(-3px, -3px) rotate(-1deg);
+    box-shadow: 9px 9px 0 var(--ink);
+}
+
+.dropdown-toggle:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 var(--ink);
+    transition-duration: 0.05s;
+}
+
+.dropdown-toggle:focus-visible {
+    outline: 3px dashed var(--cream);
+    outline-offset: 4px;
+}
+
+/* stays "pressed in" while the menu is open */
+.dropdown.open .dropdown-toggle {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.dropdown-toggle .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.dropdown.open .arrow {
+    transform: rotate(180deg);
+}
+
+/* the menu panel */
+.dropdown-menu {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    margin-top: 0;
+    background: var(--cream);
+    border: 0 solid var(--ink);
+    border-radius: 1.5rem;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: max-height 0.4s ease,
+                opacity 0.3s ease,
+                margin-top 0.4s ease,
+                visibility 0s linear 0.4s;
+}
+
+.dropdown.open .dropdown-menu {
+    max-height: 20rem;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+    border-width: 3px;
+    transition-delay: 0s;
+}
+
+/* links inside the menu: undo the pill look from "nav a" */
+nav .dropdown-menu a {
+    padding: 0.85rem 1.25rem;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed var(--ink);
+    border-radius: 0;
+    box-shadow: none;
+    animation: none;
+    transition: background 0.15s ease;
+}
+
+nav .dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+nav .dropdown-menu a:hover {
+    background: var(--mustard);
+    transform: none;
+    box-shadow: none;
+}
+
+nav .dropdown-menu a:active {
+    background: var(--orange);
+    transform: none;
+    box-shadow: none;
+}
+
+nav .dropdown-menu a:focus-visible {
+    outline: 3px dashed var(--ink);
+    outline-offset: -6px;
+}
+
 /* ---------- Animations ---------- */
 @keyframes title-pop {
     0%   { opacity: 0; transform: scale(0.4) rotate(-8deg); }
