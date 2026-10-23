@@ -40,3 +40,24 @@ const articles = [
 	}
 ];
                 
+function bookTemplate(article) {
+	return `
+		<article class="blog-article">
+			<h2>${article.title}</h2>
+			<p class="date">${article.date}</p>
+			<img src="${article.imgSrc}" alt="${article.imgAlt}" />
+			<p>${article.description}</p>
+			<p><strong>Ages:</strong> ${article.ages}</p>
+			<p><strong>Genre:</strong> ${article.genre}</p>
+			<p><strong>Rating:</strong> ${article.stars}</p>
+		</article>
+	`;
+}
+
+function renderArticles() {
+	const blogContainer = document.getElementById('blog-container');
+	const articlesHTML = articles.map(bookTemplate).join('');
+	blogContainer.innerHTML = articlesHTML;
+}
+
+document.addEventListener('DOMContentLoaded', renderArticles);
