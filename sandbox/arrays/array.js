@@ -1,3 +1,11 @@
+//arrays.js
+const steps = ["one", "two", "three"];
+function listTemplate(step) {
+  return //the html string made from step
+}
+const stepsHtml = steps.map(step => listTemplate(step)).join("");
+document.querySelector("#myList").innerHTML = stepsHtml;
+
 
 function convert(grade) {
     switch (grade){
@@ -21,14 +29,4 @@ function convert(grade) {
     }
     return points;
 }
-
-
-const words = ['watermelon', 'peach', 'apple', 'tomato', 'grape'];
-          
-
-const students = [
-    {last: 'Andrus', first: 'Aaron'},
-    {last: 'Masa', first:'Manny'},
-    {last: 'Tanda', first: 'Tamanda'}
-];
           
