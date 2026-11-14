@@ -1,0 +1,208 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+h1,
+h2 {
+  font-family: "Amatic SC", cursive;
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ---------- Logo and title ---------- */
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 3.5rem;
+  height: auto;
+}
+
+.site-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---------- Search area ---------- */
+.search-area {
+  display: flex;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ddd;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.5rem 3rem 0.5rem 0.5rem;
+  border: 2px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.4rem;
+  border: 0;
+  border-left: 1px solid #333;
+  background: none;
+  cursor: pointer;
+}
+
+.search-box button img {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ---------- Recipe card ---------- */
+main {
+  flex: 1;
+  margin-top: 1rem;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.15rem 0.4rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #eee;
+  font-size: 0.9rem;
+}
+
+.recipe-info h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #1a7fc4;
+}
+
+.rating {
+  letter-spacing: 0.1rem;
+}
+
+/* Description is hidden on mobile */
+.description {
+  display: none;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.social {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.social img {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+/* ---------- Larger devices ---------- */
+@media (min-width: 700px) {
+  .page {
+    padding: 2rem;
+  }
+
+  .logo {
+    width: 5rem;
+  }
+
+  .site-header h1 {
+    font-size: 4.5rem;
+  }
+
+  /* Image on the left, details on the right */
+  .recipe-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .recipe-image {
+    width: 40%;
+    flex-shrink: 0;
+  }
+
+  .description {
+    display: block;
+  }
+
+  /* Attribution on the left, social icons on the right */
+  .site-footer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
