@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8" />
+		<title>Site Plan</title>
+		<link type="text/css" rel="stylesheet" href="styles/site-plan.css" />
+	</head>
+
+	<body>
+		<header>
+			<h1>OmniPlay Project Plan</h1>
+			<h2>Dylan Davis</h2>
+			<h2>WDD 131</h2>
+			<!-- In the header above, add the name or your site, your name and class number. For example if you are in section 3 you would put WDD 131.03 -->
+		</header>
+		<main>
+			
+			<hr />
+			<h2>Overview</h2>
+			<h3>Purpose</h3>
+			<p>OmniPlay is a dynamic web application built for anyone who plays games and enjoys digital entertainment across multiple PC and console storefronts. 
+				It provides a single, centralized dashboard where users can catalog their entire owned game library regardless of platform, filter titles by system or completion status, and actively manage their entertainment backlog in one place.</p>
+			<!-- change this -->
+
+			<h3>Audience</h3>
+			<p>OmniPlay is designed for gamers who own games across multiple platforms and want a centralized way to manage their library. It targets both casual and dedicated gamers who want to keep track of their progress and plan their next gaming sessions.</p>
+			<!-- change this -->
+
+			<h3>Dynamic elements</h3>
+			<p>OmniPlay will utilize JavaScript to provide a dynamic user experience, including interactive filtering options, real-time updates on game status, and a responsive layout that adapts to different screen sizes.</p>
+			<!-- change this -->
+
+			<hr />
+			<h2>Branding</h2>
+			<h3>Logo</h3>
+			<!-- Replace this with some sort of logo for your site.  A logo can be as simple as the name of your site in a nice font :) -->
+			<img src="styles/images/omnilogo.png" alt="OmniPlay Logo" style="width: 600px;" />
+			<hr />
+			<h2>Style Guide</h2>
+
+			<h3>Color Palette</h3>
+			<!--  The colors you choose for a website are one of the most important decisions you will make. Follow the instructions on the activity in iLearn then return and replace the color codes below with the hex color codes (the 6 digit numbers that show at the bottom of each color) for the colors you have chosen below.  You should have at least 2 colors but do not have to fill in all 4 if you do not need them.  -->
+
+			<!-- Copy and paste the URL to your finished palette below Make sure to paste it into both spots -->
+			Palette URL:
+			<a
+				href="https://coolors.co/0b0f12-23433d-718896-91d39f-f5f6f4"
+				target="_blank"
+				>https://coolors.co/0b0f12-23433d-718896-91d39f-f5f6f4</a
+			>
+
+			<table class="colors">
+				<tbody>
+					<tr>
+						<th>Primary</th>
+						<th>Secondary</th>
+						<th>Accent 1</th>
+						<th>Accent 2</th>
+					</tr>
+					<!-- Replace the numbers in the boxes below with your hex color codes. Then switch to the site-plan.css file and change your colors there as well. -->
+					<tr>
+						<td class="primary">[#0B0F12]</td>
+						<td class="secondary">[#23433D]</td>
+						<td class="accent1">[#718896]</td>
+						<td class="accent2">[#91D39F]</td>
+					</tr>
+				</tbody>
+			</table>
+
+			
+
+			<h3>Pseudocode for your project</h3>
+
+			<ol>
+				<li>CONNECT TO THE PAGE
+					Find the main parts of the webpage so the program can control them: the add-game form, the filter buttons, the top score counters, and the empty area where game cards will appear.
+				</li>
+				<li>LOAD SAVED GAMES
+					Check the browser's saved memory for any games the user added previously. If nothing is saved yet, load a small starter list of sample games and set both filters to show "All".
+				</li>
+
+				<li>DRAW THE SCREEN
+					Clear out any old cards on the page, then check which games match the user's selected platform and status filters. For every matching game, build a card showing its cover picture, title, gaming system, status menu, and delete button, then update the total counters at the top.
+				</li>
+
+				<li>RESPOND TO THE USER
+					- Adding a game: When the user submits the form, save the new game to the list and refresh the screen.
+					- Filtering: When the user clicks a system button or picks a status, hide non-matching games and refresh the screen.
+					- Changing status: When the user picks a new status on a card, save that update and refresh the top counters.
+					- Deleting: When the user clicks delete on a card, remove that game from the list, save the change, and refresh the screen.
+				</li>
+
+				<li>START THE APP
+					As soon as the webpage finishes loading, draw the screen for the first time.
+				</li>
+			</ol>
+
+			<h3>Wireframes</h3>
+			<p>
+				Create wireframes for your project page(s). One for each page and list them
+				here. 
+			</p>
+
+			<h3>Landing page</h3>
+			<p>
+				The buttons on the left side will be the in descending order are "main library", "Progress", "Favorites", and "Settings". The main library will be the default page that loads when the user first opens the app. The main library will have a search bar at the top, a filter for platform and status, and a list of all games in the user's library. Each game will have a cover image, title, platform, status, and a delete button. The progress page will show the user's progress on each game in their library. The favorites page will show the user's favorite games. The settings page will allow the user to change their username and password.
+			</p>
+			<img src="styles/images/omniplay_wireframe.png" alt="home page wireframe" />
+		</main>
+	</body>
+</html>
